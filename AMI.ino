@@ -54,8 +54,8 @@ void loop() {
     bool active = false;
     if (active ==false){
     active = true;
-    Esplora.writeRGB(0,255,0);
-    delay(100);
+    Esplora.writeRGB(255,255,255);
+    delay(200);
     Esplora.writeRGB(0,0,0);
     delay(200);
     active = false;
@@ -63,7 +63,7 @@ void loop() {
     }
     //pulses LED for Beep
    else if (btn3 == LOW) {
-    Esplora.writeRGB(0,255,0);
+    Esplora.writeRGB(255,255,255);
     delay(750);
     Esplora.writeRGB(0,0,0);
    }
@@ -74,7 +74,12 @@ void loop() {
     if (value > averageLight+100&&AvgE==true){
       blah();
     }
-
+  
+   if (b=true){
+      ltm = testInArray(strin);
+      prin = ALphabet[ltm];
+      Serial.println(prin);
+   }
 }
 
 void blah(){
@@ -89,6 +94,7 @@ int testInArray(String phrase){
      wantedpos = i;
      return wantedpos;
    }
+
 }
 }
 
