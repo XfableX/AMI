@@ -6,8 +6,9 @@ int index = 0;
 float TotalLight=0;
 float averageLight = 0;
 int secondsActv;
-char AsciiToMorse[37]={
-  1,2,3,4 };
+int wantedpos;
+String AsciiToMorse[37]={
+  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
 
 void setup() {
   // put your setup code here, to run once:
@@ -71,6 +72,7 @@ void loop() {
     if (value > averageLight+400&&AvgE==true){
       blah();
     }
+
 }
 
 void blah(){
@@ -78,6 +80,14 @@ void blah(){
    secondsActv = (millis()/1000);
    Serial.println(value);
    Serial.println(secondsActv);
+}
+int testInArray(String phrase){
+   for (int i=0; i<AsciiToMorse; i++) {
+   if (phrase = AsciiToMorse[i]) {
+     wantedpos = i;
+     return wantedpos;
+   }
+}
 }
 
 
