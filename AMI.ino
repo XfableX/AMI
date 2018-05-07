@@ -1,7 +1,7 @@
 #include <Esplora.h>;
 void setup() {
   // put your setup code here, to run once:
-  
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -10,8 +10,8 @@ void loop() {
   int btn2 = Esplora.readButton(2);
   int btn3 = Esplora.readButton(3);
   int btn4 = Esplora.readButton(4);
-
-
+  int value = readLightSensor();
+  Serial.println(value);
   if (btn1 == LOW){
     Esplora.writeRGB(250,0,0);
   }
