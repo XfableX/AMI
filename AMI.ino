@@ -64,7 +64,7 @@ void loop() {
     //pulses LED for Beep
    else if (btn3 == LOW) {
     Esplora.writeRGB(255,255,255);
-    delay(750);
+    delay(600);
     Esplora.writeRGB(0,0,0);
    }
    else if (btn4 == LOW) {
