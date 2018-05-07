@@ -11,20 +11,21 @@ String AsciiToMorse[37]={
   "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
 
 void setup() {
-  // put your setup code here, to run once:
+  //this starts the serial so that we can output to serial
   Serial.begin(9600);
 
 }
 
 void loop() {
-  
+  //defines the buttons so that we dont have to type Esplora.readButton everytime
   int btn1 = Esplora.readButton(1);
   int btn2 = Esplora.readButton(2);
   int btn3 = Esplora.readButton(3);
   int btn4 = Esplora.readButton(4);
-  
+  //sets value to be the esplora light sensor so that we can use it in detecting difference in light
   value = Esplora.readLightSensor();
-  
+
+  //Calculates the average light level of the room and outputs for use in calculating when it recieves light from LED
   if (doAvg < 1000){
     index ++;
     TotalLight=TotalLight+value;
@@ -41,14 +42,14 @@ void loop() {
   //  blah();
   }
   
-  
+  //button to recalculate the average (for when changing rooms)
   if (btn1 == LOW){
     index = 1;
     TotalLight=0;
     averageLight=0;
     doAvg = 0;
   }
-  
+  //pulses LED for Dot
   else if (btn2 == LOW){
     bool active = false;
     if (active ==false){
@@ -60,6 +61,7 @@ void loop() {
     active = false;
     }
     }
+    //pulses LED for Beep
    else if (btn3 == LOW) {
     Esplora.writeRGB(0,255,0);
     delay(750);
@@ -68,8 +70,8 @@ void loop() {
    else if (btn4 == LOW) {
     Esplora.writeRGB(255,255,255);
     
-   }
-    if (value > averageLight+400&&AvgE==true){
+   }//if light exceeds average by predtermined threshold and AvgE is true call blah
+    if (value > averageLight+100&&AvgE==true){
       blah();
     }
 
