@@ -69,19 +69,34 @@ void loop() {
    }
    else if (btn4 == LOW) {
     Esplora.writeRGB(255,255,255);
-    
    }//if light exceeds average by predtermined threshold and AvgE is true call blah
     if (value > averageLight+100&&AvgE==true){
+      //lighttime = true;
       blah();
     }
 
 }
-
+bool lighttime = true;
+int previousmillis;
 void blah(){
-   
-   secondsActv = (millis()/1000);
+  if (lighttime = true) 
+  {
+    previousmillis = millis();
+    lighttime = false;
+  }
+  int mdivide1000;
+   mdivide1000 = (millis()/1000);
+   secondsActv = (mdivide1000 - previousmillis);
    Serial.println(value);
    Serial.println(secondsActv);
+   if (secondsActv > 200)
+   {
+    printf("DASH");
+   }
+   else 
+   {
+    printf("DOT");
+   }
 }
 int testInArray(String phrase){
    for (int i=0; i<AsciiToMorse; i++) {
