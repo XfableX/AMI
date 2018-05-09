@@ -99,11 +99,11 @@ void blah(){
    Serial.println(secondsActv);
    if (secondsActv > 200)
    {
-    printf("DASH");
+    Serial.println("DASH");
    }
    else 
    {
-    printf("DOT");
+    Serial.println("DOT");
    }
 }
 int testInArray(String phrase){
