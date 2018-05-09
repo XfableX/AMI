@@ -8,7 +8,7 @@ float averageLight = 0;
 int secondsActv;
 int wantedpos;
 String AsciiToMorse[37]={
-  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
+  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep",  };
 
 void setup() {
   //this starts the serial so that we can output to serial
