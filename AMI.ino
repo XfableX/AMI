@@ -109,7 +109,6 @@ int testInArray(String phrase){
      wantedpos = i;
      return wantedpos;
    }
-
 }
 }
 
