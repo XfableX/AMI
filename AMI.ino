@@ -1,7 +1,7 @@
 #include <Esplora.h>;
-bool AvgE=false;
-int value;
-int doAvg = 0;
+bool AvgE=false; //Average Calculation Enabled
+int value; //Light Sensors Reading
+int doAvg = 0; 
 int index = 0;
 float TotalLight=0;
 float averageLight = 0;
@@ -99,11 +99,11 @@ void blah(){
    Serial.println(secondsActv);
    if (secondsActv > 200)
    {
-    printf("DASH");
+    Serial.println("DASH");
    }
    else 
    {
-    printf("DOT");
+    Serial.println("DOT");
    }
 }
 int testInArray(String phrase){
@@ -112,6 +112,7 @@ int testInArray(String phrase){
      wantedpos = in;
      return wantedpos;
    }
+
 }
 }
 
