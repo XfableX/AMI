@@ -22,6 +22,7 @@ void loop() {
     Esplora.writeRGB(100,100,100); // pulse DOT led 
     delay(200);
     Esplora.writeRGB(0,0,0);
+    delay(200);
     active = false; 
     }   
   }
@@ -37,6 +38,7 @@ void loop() {
     Esplora.writeRGB(255,255,255); // pulse DASH led 
     delay(600);
     Esplora.writeRGB(0,0,0);
+    delay(600);
     active = false; 
     }
   }
@@ -48,7 +50,7 @@ void loop() {
     bool active = false;
     if (active ==false){
     active = true;
-    Esplora.writeRGB(50,0,0); // pulse OVER led 
+    Esplora.writeRGB(75,0,0); // pulse OVER led 
     delay(200);
     Esplora.writeRGB(0,0,0);
     active = false; 
