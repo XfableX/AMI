@@ -7,9 +7,18 @@ float TotalLight=0;
 float averageLight = 0;
 int secondsActv;
 int wantedpos;
+bool CompareEnable =false;
+bool lighttime = true;
+int previousmillis;
+String MessageRecieved;
 String AsciiToMorse[37]={
+<<<<<<< HEAD
   "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep","dot beep dot dot","beep beep","beep dot","beep beep beep","dot beep beep dot","beep beep dot beep","dot beep dot","dot dot dot","beep"  };
 
+=======
+  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
+String Alphabet[37]={"a","b","c","d"};
+>>>>>>> 36808656ee6f41003f2d17de21caf41d41260272
 void setup() {
   //this starts the serial so that we can output to serial
   Serial.begin(9600);
@@ -29,7 +38,7 @@ void loop() {
   if (doAvg < 1000){
     index ++;
     TotalLight=TotalLight+value;
-    averageLight=TotalLight/index;
+    averageLight= (TotalLight / index);
     doAvg++;
     //Serial.println(averageLight);
   }
@@ -44,7 +53,7 @@ void loop() {
   
   //button to recalculate the average (for when changing rooms)
   if (btn1 == LOW){
-    index = 1;
+    index = 0;
     TotalLight=0;
     averageLight=0;
     doAvg = 0;
@@ -75,14 +84,13 @@ void loop() {
       blah();
     }
   
-   if (b=true){
-      ltm = testInArray(strin);
-      prin = ALphabet[ltm];
-      Serial.println(prin);
+   if (CompareEnable==true){
+      int LetToMatch = testInArray(MessageRecieved);
+      String printPhrase = Alphabet[LetToMatch];
+      Serial.println(printPhrase);
    }
 }
-bool lighttime = true;
-int previousmillis;
+
 void blah(){
   if (lighttime = true) 
   {
@@ -96,17 +104,17 @@ void blah(){
    Serial.println(secondsActv);
    if (secondsActv > 200)
    {
-    printf("DASH");
+    Serial.println("DASH");
    }
    else 
    {
-    printf("DOT");
+    Serial.println("DOT");
    }
 }
 int testInArray(String phrase){
-   for (int i=0; i<AsciiToMorse; i++) {
-   if (phrase = AsciiToMorse[i]) {
-     wantedpos = i;
+   for (int in=0; in<37; in++) {
+   if (phrase = AsciiToMorse[in]) {
+     wantedpos = in;
      return wantedpos;
    }
 }
