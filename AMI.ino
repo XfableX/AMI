@@ -13,7 +13,7 @@ int previousmillis;
 String MessageRecieved;
 String AsciiToMorse[37]={
 <<<<<<< HEAD
-  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep","dot beep dot dot","beep beep","beep dot","beep beep beep","dot beep beep dot","beep beep dot beep","dot beep dot","dot dot dot","beep"  };
+  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep","dot beep dot dot","beep beep","beep dot","beep beep beep","dot beep beep dot","beep beep dot beep","dot beep dot","dot dot dot","beep","dot dot beep","dot dot dot beep","dot beep beep","beep dot dot beep","beep dot beep beep","beep beep dot dot","dot beep beep beep beep","dot dot beep beep beep","dot dot dot beep beep","dot dot dot dot beep","dot dot dot dot dot","beep dot dot dot dot","beep beep dot dot dot","beep beep beep dot dot","beep beep beep beep dot","beep beep beep beep beep"};
 
 =======
   "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
