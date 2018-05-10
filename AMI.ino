@@ -1,7 +1,7 @@
 #include <Esplora.h>;
-bool AvgE=false;
-int value;
-int doAvg = 0;
+bool AvgE=false; //Average Calculation Enabled
+int value; //Light Sensors Reading
+int doAvg = 0; 
 int index = 0;
 float TotalLight=0;
 float averageLight = 0;
@@ -12,8 +12,13 @@ bool lighttime = true;
 int previousmillis;
 String MessageRecieved;
 String AsciiToMorse[37]={
+<<<<<<< HEAD
+  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep","dot beep dot dot","beep beep","beep dot","beep beep beep","dot beep beep dot","beep beep dot beep","dot beep dot","dot dot dot","beep","dot dot beep","dot dot dot beep","dot beep beep","beep dot dot beep","beep dot beep beep","beep beep dot dot","dot beep beep beep beep","dot dot beep beep beep","dot dot dot beep beep","dot dot dot dot beep","dot dot dot dot dot","beep dot dot dot dot","beep beep dot dot dot","beep beep beep dot dot","beep beep beep beep dot","beep beep beep beep beep"};
+
+=======
   "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
 String Alphabet[37]={"a","b","c","d"};
+>>>>>>> 36808656ee6f41003f2d17de21caf41d41260272
 void setup() {
   //this starts the serial so that we can output to serial
   Serial.begin(9600);
@@ -112,6 +117,7 @@ int testInArray(String phrase){
      wantedpos = in;
      return wantedpos;
    }
+
 }
 }
 
