@@ -1,7 +1,7 @@
 #include <Esplora.h>;
-bool AvgE=false;
-int value;
-int doAvg = 0;
+bool AvgE=false; //Average Calculation Enabled
+int value; //Light Sensors Reading
+int doAvg = 0; 
 int index = 0;
 float TotalLight=0;
 float averageLight = 0;
@@ -117,6 +117,7 @@ int testInArray(String phrase){
      wantedpos = in;
      return wantedpos;
    }
+
 }
 }
 
