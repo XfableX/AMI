@@ -1,14 +1,14 @@
 #include <Esplora.h>
 
 //MODIFY THE VALUES BELOW FOR BRONZE!!!
-#define LOW_MIN 200
-#define LOW_MAX 400
+#define LOW_MIN 50
+#define LOW_MAX 100
 
-#define MID_MIN 400
-#define MID_MAX 600
+#define MID_MIN 100
+#define MID_MAX 300
 
-#define HIGH_MIN 600
-#define HIGH_MAX 800
+#define HIGH_MIN 300
+#define HIGH_MAX 600
 
 
 //receiver module for "Morse"
@@ -42,7 +42,7 @@ void loop() //Forever looping, receiving, decoding
   delay(1000);
   seconds = seconds + 1;
 
-  //Serial.println(currentReading);
+  Serial.println(currentReading);
   //Serial.println(seconds);
 
   if (seconds < 10)
@@ -54,7 +54,7 @@ void loop() //Forever looping, receiving, decoding
     Serial.println("STATE: STANDBY");
   }
   
-  if (currentReading > previousReading + 100 && seconds > 10) //There is a big jump in reading, indicating the start of the reading state
+  if (currentReading > previousReading + 10 && seconds > 10) //There is a big jump in reading, indicating the start of the reading state
   {
     state = 1;
     maxReading = currentReading;
@@ -77,17 +77,17 @@ void loop() //Forever looping, receiving, decoding
   
   previousReading = currentReading;
 
-  if (state == 1 && maxReading > LOW_MIN && maxReading < LOW_MAX && seconds == signalTimer + 4) //4 is to compensate for the one second it takes to switch state
+  if (state == 1 && maxReading > LOW_MIN && maxReading < LOW_MAX /*&& seconds == signalTimer + 4*/) //4 is to compensate for the one second it takes to switch state
   {
     Serial.println("OVER");
     signalTimer = seconds; //reset signalTimer for another 5 seconds
   }
-  else if (state == 1 && maxReading > MID_MIN && maxReading < MID_MAX && seconds == signalTimer + 4)
+  else if (state == 1 && maxReading > MID_MIN && maxReading < MID_MAX /*&& seconds == signalTimer + 4*/)
   {
     Serial.println("DOT");
     signalTimer = seconds; //reset signalTimer for another 5 seconds
   }
-  else if (state == 1 && maxReading > HIGH_MIN && maxReading < HIGH_MAX && seconds == signalTimer + 4)
+  else if (state == 1 && maxReading > HIGH_MIN && maxReading < HIGH_MAX /*&& seconds == signalTimer + 4*/)
   {
     Serial.println("DASH");
     signalTimer = seconds; //reset signalTimer for another 5 seconds
