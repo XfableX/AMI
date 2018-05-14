@@ -102,7 +102,7 @@ void blah(){
    secondsActv = (mdivide1000 - previousmillis);
    Serial.println(value);
    Serial.println(secondsActv);
-   if (secondsActv > 200)
+   if (secondsActv > 300)
    {
     Serial.println("DASH");
    }
