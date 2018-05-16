@@ -48,7 +48,7 @@ void loop() {
   {
     Esplora.writeRGB(0,0,0);
   }
-  if (btn3 == LOW)  {
+  if (SrlRead == "Over")  {
     bool active = false;
     if (active ==false){
     active = true;
