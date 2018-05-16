@@ -19,7 +19,7 @@ void loop() {
     bool active = false;
     if (active ==false){
     active = true;
-    Esplora.writeRGB(100,100,100); // pulse DOT led 
+    Esplora.writeRGB(75,75,75); // pulse DOT led 
     delay(200);
     Esplora.writeRGB(0,0,0);
     delay(200);
@@ -50,7 +50,7 @@ void loop() {
     bool active = false;
     if (active ==false){
     active = true;
-    Esplora.writeRGB(75,0,0); // pulse OVER led 
+    Esplora.writeRGB(10,0,0); // pulse OVER led 
     delay(200);
     Esplora.writeRGB(0,0,0);
     active = false; 
