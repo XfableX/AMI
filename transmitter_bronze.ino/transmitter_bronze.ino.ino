@@ -10,7 +10,7 @@ void setup() {
 //This "automatic" transmission can be as simple as copying and pasting "Esplora.writeRGB(SOMETHING)" 
 //multiple time (i.e. there is no need to write an interator working through an input array.
 void loop() {
-  int btn1 = Esplora.readButton(1);
+  int btn1 = Esplora.readButton(1);;'
   int btn2 = Esplora.readButton(2);
   int btn3 = Esplora.readButton(3);
   int btn4 = Esplora.readButton(4);
@@ -19,7 +19,7 @@ void loop() {
     bool active = false;
     if (active ==false){
     active = true;
-    Esplora.writeRGB(100,100,100); // pulse DOT led 
+    Esplora.writeRGB(5,5,5); // pulse DOT led 
     delay(200);
     Esplora.writeRGB(0,0,0);
     delay(200);
