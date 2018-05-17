@@ -14,13 +14,20 @@ void loop() {
   int btn2 = Esplora.readButton(2);
   int btn3 = Esplora.readButton(3);
   int btn4 = Esplora.readButton(4);
+  Serial.begin(9600);
+  String SrlRead = Serial.readString();
   
-  if (btn1 == LOW) {
+  if (SrlRead == "Dot") {
     bool active = false;
     if (active ==false){
     active = true;
+<<<<<<< HEAD
     Esplora.writeRGB(5,5,5); // pulse DOT led 
     delay(200);
+=======
+    Esplora.writeRGB(25,25,25); // pulse DOT led 
+    delay(500);
+>>>>>>> 654429b6284ac727c1f9610c12118eec392b0311
     Esplora.writeRGB(0,0,0);
     delay(200);
     active = false; 
@@ -31,12 +38,12 @@ void loop() {
     Esplora.writeRGB(0,0,0);
   }
   
-  if (btn2 == LOW) {
+  if (SrlRead == "Dash") {
    bool active = false;
     if (active ==false){
     active = true;
     Esplora.writeRGB(255,255,255); // pulse DASH led 
-    delay(600);
+    delay(1000);
     Esplora.writeRGB(0,0,0);
     delay(600);
     active = false; 
@@ -46,11 +53,11 @@ void loop() {
   {
     Esplora.writeRGB(0,0,0);
   }
-  if (btn3 == LOW)  {
+  if (SrlRead == "Over")  {
     bool active = false;
     if (active ==false){
     active = true;
-    Esplora.writeRGB(75,0,0); // pulse OVER led 
+    Esplora.writeRGB(10,0,0); // pulse OVER led 
     delay(200);
     Esplora.writeRGB(0,0,0);
     active = false; 
