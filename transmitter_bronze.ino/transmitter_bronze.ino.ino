@@ -76,6 +76,36 @@ void loop() {
     delay(6000);//light levels and delay for dash
     Esplora.writeRGB(0,0,0);
     delay(6000);//delay for between letters 
+    
+    if (SrlRead == "M"||"n") {
+    Esplora.writeRGB(255,255,255);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(255,255,255);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(2 000);//delay for between letters 
+
+    if (SrlRead == "N"||"n") {
+    Esplora.writeRGB(255,255,255);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(75,75,75);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between letters 
+
+    if (SrlRead == "O"||"o") {
+    Esplora.writeRGB(255,255,255);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(255,255,255);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(6000);//delay for between letters 
   }
  }
 
