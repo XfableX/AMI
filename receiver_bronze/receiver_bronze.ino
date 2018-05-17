@@ -1,14 +1,14 @@
 #include <Esplora.h>
 
 //MODIFY THE VALUES BELOW FOR BRONZE!!!
-#define LOW_MIN 50
-#define LOW_MAX 100
+#define LOW_MIN 100
+#define LOW_MAX 299
 
-#define MID_MIN 100
-#define MID_MAX 300
+#define MID_MIN 300
+#define MID_MAX 599
 
-#define HIGH_MIN 300
-#define HIGH_MAX 600
+#define HIGH_MIN 600
+#define HIGH_MAX 1000
 
 
 //receiver module for "Morse"
