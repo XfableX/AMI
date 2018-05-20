@@ -73,15 +73,7 @@ void loop() {
   {
     Esplora.writeRGB(0, 0, 0);
   }
-  if (Esplora.readButton(1)){
-    dot();
-    dot();
-    dot();
-    dot();
-    delay(500);
-    dot();
-    dot();
-  }
+
   if (SrlRead == "Dash") {
 <<<<<<< HEAD
 
