@@ -47,7 +47,24 @@ void loop() {
     }
   }
   if (SrlRead == "Dot") {
+<<<<<<< HEAD
     dot();
+=======
+    bool active = false;
+    if (active ==false){
+    active = true;
+//<<<<<<< HEAD
+    Esplora.writeRGB(5,5,5); // pulse DOT led 
+    delay(2000);
+//=======
+    Esplora.writeRGB(25,25,25); // pulse DOT led 
+    delay(500);
+//>>>>>>> 654429b6284ac727c1f9610c12118eec392b0311
+    Esplora.writeRGB(0,0,0);
+    delay(200);
+    active = false; 
+    }   
+>>>>>>> d9362ac57d0c46c4bdc3805c6b0b1e5aa507ac99
   }
   else
   {
@@ -55,8 +72,20 @@ void loop() {
   }
 
   if (SrlRead == "Dash") {
+<<<<<<< HEAD
 
     dash();
+=======
+   bool active = false;
+    if (active ==false){
+    active = true;
+    Esplora.writeRGB(255,255,255); // pulse DASH led 
+    delay(6000);
+    Esplora.writeRGB(0,0,0);
+    delay(600);
+    active = false; 
+    }
+>>>>>>> d9362ac57d0c46c4bdc3805c6b0b1e5aa507ac99
   }
   else
   {
@@ -64,12 +93,21 @@ void loop() {
   }
   if (SrlRead == "Over")  {
     bool active = false;
+<<<<<<< HEAD
     if (active == false) {
       active = true;
       Esplora.writeRGB(10, 0, 0); // pulse OVER led
       delay(200);
       Esplora.writeRGB(0, 0, 0);
       active = false;
+=======
+    if (active ==false){
+    active = true;
+    Esplora.writeRGB(10,0,0); // pulse OVER led 
+    delay(2000);
+    Esplora.writeRGB(0,0,0);
+    active = false; 
+>>>>>>> d9362ac57d0c46c4bdc3805c6b0b1e5aa507ac99
     }
   }
   else
@@ -87,6 +125,7 @@ void dash() {
     delay(600);
     active = false;
   }
+<<<<<<< HEAD
 }
 
 
@@ -102,4 +141,47 @@ void dot() {
   }
 }
 
+=======
+  if (SrlRead == "A") {
+    Esplora.writeRGB(75,75,75);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(255,255,255);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(6000);//delay for between letters 
+    
+    if (SrlRead == "M"||"n") {
+    Esplora.writeRGB(255,255,255);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(255,255,255);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(2 000);//delay for between letters 
+
+    if (SrlRead == "N"||"n") {
+    Esplora.writeRGB(255,255,255);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(75,75,75);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between letters 
+
+    if (SrlRead == "O"||"o") {
+    Esplora.writeRGB(255,255,255);
+    delay(2000);//light levels and delay for dot
+    Esplora.writeRGB(0,0,0);
+    delay(2000);//delay for between dots/beeps within letter
+    Esplora.writeRGB(255,255,255);
+    delay(6000);//light levels and delay for dash
+    Esplora.writeRGB(0,0,0);
+    delay(6000);//delay for between letters 
+  }
+ }
+>>>>>>> d9362ac57d0c46c4bdc3805c6b0b1e5aa507ac99
 
