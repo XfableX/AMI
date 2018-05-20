@@ -5,6 +5,9 @@ String AsciiToMorse[33] = {\
 "beep dot dot dot", \
 "beep dot beep dot", \
 "beep dot dot", \
+"dot", \
+"dot dot beep dot", \
+"beep beep dot", \
 "dot dot dot dot", \
 "dot dot", \
 "dot beep beep beep", \
