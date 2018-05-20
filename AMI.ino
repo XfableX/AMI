@@ -13,12 +13,12 @@ int previousmillis;
 String MessageRecieved;
 String AsciiToMorse[37]={
 <<<<<<< HEAD
-  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep","dot beep dot dot","beep beep","beep dot","beep beep beep","dot beep beep dot","beep beep dot beep","dot beep dot","dot dot dot","beep","dot dot beep","dot dot dot beep","dot beep beep","beep dot dot beep","beep dot beep beep","beep beep dot dot","dot beep beep beep beep","dot dot beep beep beep","dot dot dot beep beep","dot dot dot dot beep","dot dot dot dot dot","beep dot dot dot dot","beep beep dot dot dot","beep beep beep dot dot","beep beep beep beep dot","beep beep beep beep beep"};
+  "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot","dot","dot dot beep dot","beep beep dot","dot dot dot dot","dot dot","dot beep beep beep","beep dot beep","dot beep dot dot","beep beep","beep dot","beep beep beep","dot beep beep dot","beep beep dot beep","dot beep dot","dot dot dot","beep","dot dot beep","dot dot dot beep","dot beep beep","beep dot dot beep","beep dot beep beep","beep beep dot dot","dot beep beep beep beep","dot dot beep beep beep","dot dot dot beep beep","dot dot dot dot beep","dot dot dot dot dot","beep dot dot dot dot","beep beep dot dot dot","beep beep beep dot dot","beep beep beep beep dot","beep beep beep beep beep"};
 
 =======
   "dot beep","beep dot dot dot","beep dot beep dot","beep dot dot" };
 String Alphabet[37]={"a","b","c","d"};
->>>>>>> 36808656ee6f41003f2d17de21caf41d41260272
+>>>>>>> 36808656ee6f41003f2d17de21caf41d4126027
 void setup() {
   //this starts the serial so that we can output to serial
   Serial.begin(9600);
