@@ -50,7 +50,7 @@ void loop() {
       Serial.println(MorseReturn);
     }
   }
-  if (SrlRead == "Dot") {
+  if (SrlRead == "dot") {
 
     dot();
 
@@ -82,7 +82,7 @@ void loop() {
     dot();
     dot();
   }
-  if (SrlRead == "Dash") {
+  if (SrlRead == "beep") {
 
 
     dash();
