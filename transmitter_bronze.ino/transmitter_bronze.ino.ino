@@ -67,6 +67,9 @@ void loop() {
           dash();
           //Serial.println("beep");
         }
+        else if (c == "over"){
+          over();
+        }
         //      WordSplitIndex++;
       }
       //Serial.println (MorseReturn);
@@ -167,6 +170,17 @@ void dot() {
   if (active == false) {
     active = true;
     Esplora.writeRGB(25, 25, 25); // pulse DOT led
+    delay(500);
+    Esplora.writeRGB(0, 0, 0);
+    delay(200);
+    active = false;
+  }
+}
+void over(){
+    bool active = false;
+  if (active == false) {
+    active = true;
+    Esplora.writeRGB(5,5,5); // pulse DOT led
     delay(500);
     Esplora.writeRGB(0, 0, 0);
     delay(200);
