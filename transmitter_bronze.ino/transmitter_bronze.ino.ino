@@ -1,22 +1,23 @@
 #include <Esplora.h>
-
-String AsciiToMorse[36] = {\
-                           "dot beep", \
-                           "beep dot dot dot", \
-                           "beep dot beep dot", \
-                           "beep dot dot", \
-                           "dot", \
-                           "dot dot beep dot", \
-                           "beep beep dot", \
-                           "dot dot dot dot", \
-                           "dot dot", \
-                           "dot beep beep beep", \
-                           "beep dot beep", \
-                           "dot beep dot dot", \
-                           "beep beep", \
-                           "beep dot", \
-                           "beep beep beep", "dot beep beep dot", "beep beep dot beep", "dot beep dot", "dot dot dot", "beep", "dot dot beep", "dot dot dot beep", "dot beep beep", "beep dot dot beep", "beep dot beep beep", "beep beep dot dot", "dot beep beep beep beep", "dot dot beep beep beep", "dot dot dot beep beep", "dot dot dot dot beep", "dot dot dot dot dot", "beep dot dot dot dot", "beep beep dot dot dot", "beep beep beep dot dot", "beep beep beep beep dot", "beep beep beep beep beep"
-                          };
+char *ptr = NULL;
+char *strings[10];
+char* AsciiToMorse[36] = {\
+                          "dot:beep", \
+                          "beep:dot:dot:dot", \
+                          "beep:dot:beep:dot", \
+                          "beep:dot:dot", \
+                          "dot", \
+                          "dot:dot:beep:dot", \
+                          "beep:beep:dot", \
+                          "dot:dot:dot:dot", \
+                          "dot dot", \
+                          "dot beep beep beep", \
+                          "beep dot beep", \
+                          "dot beep dot dot", \
+                          "beep beep", \
+                          "beep dot", \
+                          "beep beep beep", "dot beep beep dot", "beep beep dot beep", "dot beep dot", "dot dot dot", "beep", "dot dot beep", "dot dot dot beep", "dot beep beep", "beep dot dot beep", "beep dot beep beep", "beep beep dot dot", "dot beep beep beep beep", "dot dot beep beep beep", "dot dot dot beep beep", "dot dot dot dot beep", "dot dot dot dot dot", "beep dot dot dot dot", "beep beep dot dot dot", "beep beep beep dot dot", "beep beep beep beep dot", "beep beep beep beep beep"
+                         };
 char Alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 void setup() {
 }
@@ -47,7 +48,28 @@ void loop() {
         }
       }
       MorseReturn = AsciiToMorse[Index];
-      Serial.println(MorseReturn);
+      //  char array[] = MorseReturn;
+      byte indexM = 0;
+      ptr = strtok(AsciiToMorse[Index], ": ;");
+      while(ptr != NULL)
+      {
+        strings[indexM] = ptr;
+        indexM++;
+        ptr = strtok(NULL, ": ;");  // takes a list of delimiters
+      }
+      // int WordSplitIndex=0;
+      for (String c : strings) {
+        if (c == "dot") {
+         // Serial.println("dot");
+          dot();
+        }
+        else if (c == "beep") {
+          dash();
+          //Serial.println("beep");
+        }
+        //      WordSplitIndex++;
+      }
+      //Serial.println (MorseReturn);
     }
   }
   if (SrlRead == "dot") {
@@ -68,12 +90,12 @@ void loop() {
       delay(200);
       active = false;
     }
-    }
+  }
   else
   {
     Esplora.writeRGB(0, 0, 0);
   }
-  if (Esplora.readButton(1)==LOW){
+  if (Esplora.readButton(1) == LOW) {
     dot();
     dot();
     dot();
@@ -126,30 +148,30 @@ void loop() {
     }
   }
 }
-  void dash() {
-    bool active = false;
-    if (active == false) {
-      active = true;
-      Esplora.writeRGB(255, 255, 255); // pulse DASH led
-      delay(1000);
-      Esplora.writeRGB(0, 0, 0);
-      delay(600);
-      active = false;
-    }
-
-  
-
-}
-  void dot() {
-    bool active = false;
-    if (active == false) {
-      active = true;
-      Esplora.writeRGB(25, 25, 25); // pulse DOT led
-      delay(500);
-      Esplora.writeRGB(0, 0, 0);
-      delay(200);
-      active = false;
-    }
+void dash() {
+  bool active = false;
+  if (active == false) {
+    active = true;
+    Esplora.writeRGB(255, 255, 255); // pulse DASH led
+    delay(1000);
+    Esplora.writeRGB(0, 0, 0);
+    delay(600);
+    active = false;
   }
 
- 
+
+
+}
+void dot() {
+  bool active = false;
+  if (active == false) {
+    active = true;
+    Esplora.writeRGB(25, 25, 25); // pulse DOT led
+    delay(500);
+    Esplora.writeRGB(0, 0, 0);
+    delay(200);
+    active = false;
+  }
+}
+
+
