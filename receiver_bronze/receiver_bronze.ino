@@ -9,7 +9,7 @@
 
 #define HIGH_MIN 600
 #define HIGH_MAX 1000
-
+String RecievedString;
 
 //receiver module for "Morse"
 //Expected transmission to follow this algorithm:
@@ -79,16 +79,19 @@ void loop() //Forever looping, receiving, decoding
 
   if (state == 1 && maxReading > LOW_MIN && maxReading < LOW_MAX /*&& seconds == signalTimer + 4*/) //4 is to compensate for the one second it takes to switch state
   {
+    over();
     Serial.println("OVER");
     signalTimer = seconds; //reset signalTimer for another 5 seconds
   }
   else if (state == 1 && maxReading > MID_MIN && maxReading < MID_MAX /*&& seconds == signalTimer + 4*/)
   {
+    dot();
     Serial.println("DOT");
     signalTimer = seconds; //reset signalTimer for another 5 seconds
   }
   else if (state == 1 && maxReading > HIGH_MIN && maxReading < HIGH_MAX /*&& seconds == signalTimer + 4*/)
   {
+    dash();
     Serial.println("DASH");
     signalTimer = seconds; //reset signalTimer for another 5 seconds
   }
@@ -96,5 +99,16 @@ void loop() //Forever looping, receiving, decoding
   {
     signalTimer = seconds;
   }
+  Serial.println(RecievedString);
 }
+void dash(){
+  RecievedString=RecievedString+"dash ";
+}
+void dot(){
+  RecievedString=RecievedString+"dot ";
+}
+void over(){
+  RecievedString=RecievedString+"over";
+}
+
 
