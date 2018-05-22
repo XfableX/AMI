@@ -2,21 +2,42 @@
 char *ptr = NULL;
 char *strings[10];
 char* AsciiToMorse[36] = {\
-                          "dot:beep", \
-                          "beep:dot:dot:dot", \
-                          "beep:dot:beep:dot", \
-                          "beep:dot:dot", \
-                          "dot", \
-                          "dot:dot:beep:dot", \
-                          "beep:beep:dot", \
-                          "dot:dot:dot:dot", \
-                          "dot dot", \
-                          "dot beep beep beep", \
-                          "beep dot beep", \
-                          "dot beep dot dot", \
-                          "beep beep", \
-                          "beep dot", \
-                          "beep beep beep", "dot beep beep dot", "beep beep dot beep", "dot beep dot", "dot dot dot", "beep", "dot dot beep", "dot dot dot beep", "dot beep beep", "beep dot dot beep", "beep dot beep beep", "beep beep dot dot", "dot beep beep beep beep", "dot dot beep beep beep", "dot dot dot beep beep", "dot dot dot dot beep", "dot dot dot dot dot", "beep dot dot dot dot", "beep beep dot dot dot", "beep beep beep dot dot", "beep beep beep beep dot", "beep beep beep beep beep"
+                          "dot:beep:over ", \
+                          "beep:dot:dot:dot:over ", \
+                          "beep:dot:beep:dot:over ", \
+                          "beep:dot:dot:over ", \
+                          "dot:over ", \
+                          "dot:dot:beep:dot:over ", \
+                          "beep:beep:dot:over ", \
+                          "dot:dot:dot:dot:over ", \
+                          "dot:dot:over ", \
+                          "dot:beep:beep:beep:over ", \
+                          "beep:dot:beep:over ", \
+                          "dot:beep:dot:dot:over ", \
+                          "beep:beep:over ", \
+                          "beep:dot:over ", \
+                          "beep:beep:beep:over ", \
+                          "dot:beep:beep:dot:over ", \
+                          "beep:beep:dot:beep:over ", \
+                          "dot:beep:dot:over ", \
+                          "dot:dot:dot:over ", \
+                          "beep:over ", \
+                          "dot:dot:beep:over ", \
+                          "dot:dot:dot:beep:over ", \
+                          "dot:beep:beep:over ", \
+                          "beep:dot:dot:beep:over ", \
+                          "beep:dot:beep:beep:over ", \
+                          "beep:beep:dot:dot:over ", \
+                          "dot:beep:beep:beep:beep:over ", \
+                          "dot:dot:beep;beep:beep:over ", \
+                          "dot:dot:dot:beep:beep:over ", \
+                          "dot:dot:dot:dot:beep:over ", \
+                          "dot:dot:dot:dot:dot:over ", \
+                          "beep:dot:dot:dot:dot:over ", \
+                          "beep:beep:dot:dot:dot:over ", \
+                          "beep:beep:beep:dot:dot:over ", \
+                          "beep:beep:beep:beep:dot:over ", \
+                          "beep:beep:beep:beep:beep:over ", \
                          };
 char Alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 void setup() {
